@@ -1,0 +1,45 @@
+QuickSoundSwitch
+Version 1.1 (2012-04-06)
+Aaron Brooks (http://brooksaar.com/)
+
+DESCRIPTION
+
+QuickSoundSwitch is a System Tray app for Windows 7 that allows the user to easily change between default audio playback devices.
+
+COMPILING
+
+QuickSoundSwitch was written in C# for the .NET Framework (4.0), in Visual Studio 2010 Professional. QSS may compile using Visual Studio 2010 Express, but I haven't tested it. To compile, you will need to open the project in Visual Studio, make sure all the paths are correct for your environment, and build the solution.
+
+CHANGELOG
+
+1.1
+- Changed the way we display the current audio device in use. Instead of having a seperate entry displaying the current device, the current device will have a radio button style check mark next to it in the menu.
+
+1.0
+- Initial Release
+
+KNOWN BUGS
+
+- None... Yet.
+
+THANKS
+
+"EreTIk" for the COM-Interface.
+Dave Amenta (http://www.daveamenta.com/) for the sample C++ for interacting with the COM-Interface.
+SoundSwitch (http://soundswitch.codeplex.com/) for making me want to do this project. My apologies for ripping off your name!
+
+LICENSE
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                   Version 2, December 2004
+
+Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
+
+           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+ 0. You just DO WHAT THE FUCK YOU WANT TO.

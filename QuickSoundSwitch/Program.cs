@@ -1,4 +1,11 @@
-﻿using System;
+﻿// ----------------------------------------------------------------------------
+// Program.cs
+// Creates a tray app that allows users to easily switch between sound devices.
+// Part of QuickSoundSwitch.
+// Aaron Brooks, 2012.
+// ----------------------------------------------------------------------------
+
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -9,7 +16,7 @@ using NAudio.CoreAudioApi;
 namespace QuickSoundSwitch
 {
     class Program
-    {
+   { 
         static NotifyIcon trayIcon = new NotifyIcon
         {
             Icon = Icon.FromHandle(Properties.Resources.QuickSoundSwitch.Handle),
@@ -26,6 +33,7 @@ namespace QuickSoundSwitch
 
         static AudioDevice[] GetDevices()
         {
+            
             AudioDevice[] deviceList = new AudioDevice[GetDeviceCount()];
 
             for (int i = 0; i < GetDeviceCount(); i++)
@@ -49,13 +57,19 @@ namespace QuickSoundSwitch
 
             trayMenu.MenuItems.Clear();
 
-            trayMenu.MenuItems.Add("Current: " + defaultDevice.FriendlyName + " (" + defaultDevice.DeviceFriendlyName + ")");
-            trayMenu.MenuItems.Add("-");
-
             for (int i = 0; i < deviceList.Length; i++)
             {
+                MenuItem mItem;
                 int localI = i; //We create a local int so that we don't have problems with the delegate inside the for loop.
-                trayMenu.MenuItems.Add(/*"[" + (deviceList[i].DeviceNum+1) + "] " + */deviceList[i].DeviceName, (f, g) => deviceList[localI].SetDefault());
+
+                mItem = new MenuItem(deviceList[i].DeviceName, (f, g) => deviceList[localI].SetDefault());
+                if (deviceList[i].DeviceID.GetHashCode() == defaultDevice.ID.GetHashCode())
+                {
+                    mItem.RadioCheck = true;
+                    mItem.Checked = true; 
+                }
+                
+                trayMenu.MenuItems.Add(mItem);
             }
 
             trayMenu.MenuItems.Add("-");

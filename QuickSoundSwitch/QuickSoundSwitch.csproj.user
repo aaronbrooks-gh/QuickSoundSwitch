@@ -11,5 +11,6 @@
     <StartProgram>Z:\Programming\quicksoundswitch\QuickSoundSwitch\bin\Debug\QuickSoundSwitch.exe</StartProgram>
     <RemoteDebugEnabled>true</RemoteDebugEnabled>
     <RemoteDebugMachine>10.0.0.163</RemoteDebugMachine>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
   </PropertyGroup>
 </Project>
