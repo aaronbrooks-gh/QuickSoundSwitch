@@ -1,5 +1,5 @@
 QuickSoundSwitch
-Version 1.1 (2012-04-06)
+Version 1.2 (2012-09-02)
 Aaron Brooks (http://brooksaar.com/)
 
 DESCRIPTION
@@ -11,6 +11,9 @@ COMPILING
 QuickSoundSwitch was written in C# for the .NET Framework (4.0), in Visual Studio 2010 Professional. QSS may compile using Visual Studio 2010 Express, but I haven't tested it. To compile, you will need to open the project in Visual Studio, make sure all the paths are correct for your environment, and build the solution.
 
 CHANGELOG
+
+1.2
+- Added support for using a custom icon.
 
 1.1
 - Changed the way we display the current audio device in use. Instead of having a seperate entry displaying the current device, the current device will have a radio button style check mark next to it in the menu.

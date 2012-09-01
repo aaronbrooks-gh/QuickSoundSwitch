@@ -6,6 +6,7 @@
 // ----------------------------------------------------------------------------
 
 using System;
+using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -25,8 +26,14 @@ namespace QuickSoundSwitch
         };
         static ContextMenu trayMenu = new ContextMenu();
 
+        [STAThread]
         static void Main()
         {
+            if(File.Exists("QuickSoundSwitch.ico"))
+            {
+                trayIcon.Icon = Icon.ExtractAssociatedIcon("QuickSoundSwitch.ico");
+            }
+
             CreateTray();
             Application.Run();
         }
